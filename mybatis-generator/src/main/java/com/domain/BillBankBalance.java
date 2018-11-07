@@ -1,5 +1,9 @@
 package com.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.util.BigDecimalFormat2;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -12,6 +16,7 @@ public class BillBankBalance {
 
     private String tradeType;
 
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd")
     private Date billDate;
 
     private String transSq;
@@ -20,14 +25,17 @@ public class BillBankBalance {
 
     private String acctId;
 
+    @JsonSerialize(using = BigDecimalFormat2.class)
     private BigDecimal tranAmount;
 
     private Long optId;
 
     private String remark;
 
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd hh:mm:ss")
     private Date createTime;
 
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd hh:mm:ss")
     private Date updateTime;
 
     public Long getId() {
