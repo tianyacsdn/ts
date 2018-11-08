@@ -7,6 +7,8 @@
     <modules>
         <module>mybatis-generator</module>
         <module>swagger2</module>
+        <module>spring-cloud-feign</module>
+        <module>annotation</module>
     </modules>
 
     <groupId>ts</groupId>
